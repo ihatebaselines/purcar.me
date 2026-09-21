@@ -33,4 +33,4 @@ Pentru testare locala, modulul Wasm lipseste pana cand ruleaza workflow-ul GitHu
 
 Workflow-ul `.github/workflows/build-wasm.yml` construieste C++ WebAssembly si site-ul. Workflow-ul `.github/workflows/deploy-pages.yml` publica artefactul pe GitHub Pages.
 
-In repository settings, activeaza **Settings → Pages → GitHub Actions**. Pentru domeniu, seteaza `purcar.me` ca Custom domain si configureaza DNS-ul la registrar conform instructiunilor GitHub Pages. Camera functioneaza public doar prin HTTPS.
+In repository settings, activeaza **Settings → Pages → GitHub Actions**. Pentru domeniu, seteaza manual `purcar.me` la **Custom domain**; la o publicare cu GitHub Actions, fisierul `CNAME` nu activeaza singur domeniul. Configureaza apoi DNS-ul la registrar conform instructiunilor GitHub Pages. Camera functioneaza public doar prin HTTPS.
