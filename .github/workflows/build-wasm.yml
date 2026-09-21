@@ -23,7 +23,7 @@ jobs:
         run: |
           source /tmp/emsdk/emsdk_env.sh
           mkdir -p public/wasm
-          emcc cpp/wasm/purcarorz_core.cpp -std=c++17 -O3 -s MODULARIZE=1 -s EXPORT_ES6=1 -s ENVIRONMENT=web -s EXPORTED_FUNCTIONS='["_po_create","_po_destroy","_po_set_threshold","_po_set_filter","_po_record","_po_count","_po_average","_malloc","_free"]' -s EXPORTED_RUNTIME_METHODS='["ccall","UTF8ToString","stringToUTF8","lengthBytesUTF8"]' -o public/wasm/purcarorz_core.js
+          em++ cpp/wasm/purcarorz_core.cpp -std=c++17 -O3 -s MODULARIZE=1 -s EXPORT_ES6=1 -s ENVIRONMENT=web -s EXPORTED_FUNCTIONS='["_po_create","_po_destroy","_po_set_threshold","_po_set_filter","_po_record","_po_count","_po_average","_malloc","_free"]' -s EXPORTED_RUNTIME_METHODS='["ccall","UTF8ToString","stringToUTF8","lengthBytesUTF8"]' -o public/wasm/purcarorz_core.js
       - name: Commit compiled browser runtime
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
