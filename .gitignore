@@ -1,0 +1,10 @@
+node_modules/
+dist/
+build/
+.chrome-qa/
+.chrome-qa2/
+implementation*.png
+design-comparison.png
+detectii_web.txt
+public/wasm/purcarorz_core.js
+public/wasm/purcarorz_core.wasm
