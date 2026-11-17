@@ -22,7 +22,7 @@ PHC-1 predictions run in the visitor's browser with ONNX Runtime WebAssembly. Th
 
 For deployment on Cloudflare, `/download/model` redirects the browser to the public GitHub LFS object so the large response is served directly by GitHub's file CDN. The model is about 203 MB, so it cannot be shipped as a Cloudflare static asset or bundled into the Worker. Set the Worker runtime variable `PHC_MODEL_URL` only if the model is moved to another public object URL. Browser inference requires sending the model to the visitor; anyone can save a copy of the file.
 
-SMILES conversion and dataset examples still use the optional Python API. Set `HEXOCHEM_API_URL` to a deployed API base URL if those features should work on the hosted site. Locally, the development default is `http://127.0.0.1:7860`.
+SMILES parsing runs locally in the browser through RDKit WebAssembly, so the Load buttons do not need the chemistry API. Random organic and inorganic dataset examples still use the optional Python API. Set `HEXOCHEM_API_URL` to a deployed API base URL if those examples should work on the hosted site. Locally, the development default is `http://127.0.0.1:7860`.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

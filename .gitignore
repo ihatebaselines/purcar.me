@@ -17,6 +17,7 @@
 /.next/
 /out/
 /public/onnxruntime/
+/public/rdkit/
 
 # production
 /build

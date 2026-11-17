@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import type { InferenceSession } from "onnxruntime-web";
 import { ImageGenerationLoader } from "@/components/magic/ui";
 import { PeriodicTableModal } from "@/components/PeriodicTableModal";
+import { parseSmiles } from "./smiles";
 
 interface GNode {
   element: string;
@@ -242,14 +243,23 @@ export default function StudioPage() {
   }
 
   async function loadSmiles(k: "A" | "B", smi: string) {
-    if (!smi.trim()) { graphsRef.current[k].nodes = []; graphsRef.current[k].edges = []; syncTextFromGraph(k); return; }
+    if (!smi.trim()) {
+      graphsRef.current[k].nodes = [];
+      graphsRef.current[k].edges = [];
+      syncTextFromGraph(k);
+      setStatus(`Reactant ${k} cleared.`);
+      return;
+    }
     try {
-      const res = await fetch("/api/smiles_to_graph", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ smiles: smi.trim() }) });
-      const d = await res.json();
-      if (d.error) { setStatus(d.error); return; }
-      setGraphData(k, d);
-    } catch {
-      setStatus("SMILES conversion needs the chemistry service; you can still edit atoms and bonds directly.");
+      setStatus(`Parsing Reactant ${k} in this browser…`);
+      const graph = await parseSmiles(smi);
+      setGraphData(k, graph);
+      if (graph.canonicalSmiles !== smi.trim()) {
+        (k === "A" ? setSmilesA : setSmilesB)(graph.canonicalSmiles);
+      }
+      setStatus(`Reactant ${k} loaded locally · ${graph.nodes.length} atoms · ${graph.edges.length} bonds.`);
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : "Could not parse this SMILES in the browser.");
     }
   }
 
