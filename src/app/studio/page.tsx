@@ -185,10 +185,12 @@ export default function StudioPage() {
         throw new Error(`PHC-1 model size mismatch (${reportedSize.toLocaleString()} bytes).`);
       }
       const modelBytes = new Uint8Array(MODEL_SIZE);
+      // Clone before locking the response body with getReader().
+      const cacheResponse = cache && shouldCache ? response.clone() : null;
       const reader = response.body?.getReader();
       if (!reader) throw new Error("PHC-1 response did not include a readable body. Please retry.");
-      const cacheWrite = cache && shouldCache
-        ? cache.put(MODEL_URL, response.clone()).then(() => true, () => false)
+      const cacheWrite = cacheResponse
+        ? cache!.put(MODEL_URL, cacheResponse).then(() => true, () => false)
         : null;
       let received = 0;
       let lastUpdate = 0;
