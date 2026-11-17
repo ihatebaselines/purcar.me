@@ -1,69 +1,123 @@
-import Image from "next/image";
+import Link from "next/link";
+import DrunkTitle from "@/components/home/DrunkTitle";
+import HeroFooter from "@/components/HeroFooter";
+import { BorderBeam, Particles } from "@/components/magic/effects";
+
+const models = [
+  {
+    number: "01",
+    label: "LATEST RELEASE · PHC-1",
+    title: "Purcar HexoChem 1",
+    description:
+      "The newest released Purcar model. Explore chemistry across organic and inorganic examples, with all 118 elements represented.",
+    href: "/studio",
+    action: "Open HexoChem Studio",
+    className: "model-card-featured",
+  },
+  {
+    number: "02",
+    label: "COMING SOON",
+    title: "PurcarSF 1.0",
+    description:
+      "The Purcar language model line is coming back. More details will follow as the next release takes shape.",
+    href: "#about",
+    action: "Follow the project",
+    className: "model-card-upcoming",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <main className="site-main home-minimal-main purcar-home">
+        <section className="hero-minimal" aria-labelledby="home-title">
+          <Particles className="hero-sky-particles" quantity={35} color="#ffffff" size={0.45} />
+          <div className="hero-minimal-center">
+            <span className="purcar-eyebrow"><i /> A SMALL PLAYGROUND FOR MODELS</span>
+            <DrunkTitle />
+            <p className="hero-minimal-desc">
+              A fun little project where I test, explore, and share different models.
+            </p>
+            <div className="purcar-hero-actions">
+              <Link className="purcar-primary-link" href="#models">
+                Explore the models <span aria-hidden="true">↓</span>
+              </Link>
+              <Link className="purcar-secondary-link" href="/studio">
+                Try PHC-1 in HexoChem Studio <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="hero-minimal-bottom">
+            <div className="hero-strip purcar-model-strip" aria-label="Purcar models">
+              <Link href="#models" className="strip-item"><span className="strip-num">01</span><span className="strip-label">PHC-1 · latest release</span></Link>
+              <span className="strip-sep" aria-hidden="true">|</span>
+              <Link href="#models" className="strip-item"><span className="strip-num">02</span><span className="strip-label">PurcarSF 1.0 · coming soon</span></Link>
+            </div>
+            <p className="hero-location">PURCAR MODEL PLAYGROUND</p>
+          </div>
+        </section>
+
+        <section className="min-section purcar-section" id="models" aria-labelledby="models-title">
+          <div className="min-section-head">
+            <span className="min-kicker">01 / the models</span>
+            <span className="purcar-section-aside">TESTED · SHARED · IN PROGRESS</span>
+          </div>
+          <div className="purcar-section-intro">
+            <h2 id="models-title">A few models, and room for more.</h2>
+            <p>Here’s what’s out and what’s on its way.</p>
+          </div>
+          <div className="purcar-model-grid purcar-hover-grid">
+            {models.map((model) => (
+              <article className={`purcar-model-card purcar-hover-card ${model.className}`} key={model.number}>
+                <div className="purcar-hover-copy">
+                  <div className="purcar-model-card-top">
+                    <span>{model.label}</span>
+                    <span>{model.number} / 01</span>
+                  </div>
+                  <h3>{model.title}</h3>
+                  <h4 aria-hidden="true">{model.number === "01" ? "PHC-1 · Ready to explore" : "Purcar language model · In progress"}</h4>
+                  <p>{model.description}</p>
+                  <Link href={model.href} className="purcar-model-link">
+                    {model.action} <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+                {model.number === "01" ? (
+                  <div className="purcar-hover-visual" aria-hidden="true">
+                    <div className="purcar-hover-visual-glow" />
+                    <div className="purcar-hover-orbit purcar-hover-orbit-one" />
+                    <div className="purcar-hover-orbit purcar-hover-orbit-two" />
+                    <div className="purcar-hover-logo">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src="/media/hexochem-logo.webp" alt="" />
+                    </div>
+                    <span className="purcar-hover-code">PURCAR · PHC / 001</span>
+                  </div>
+                ) : (
+                  <div className="purcar-upcoming-visual" aria-hidden="true">
+                    <span>UP NEXT</span>
+                    <strong>PurcarSF</strong>
+                    <small>1.0 · COMING SOON</small>
+                  </div>
+                )}
+                <BorderBeam className="purcar-model-beam" size={140} duration={12} colorFrom="#60a5fa" colorTo="#2563eb" />
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="min-section purcar-section purcar-about" id="about" aria-labelledby="about-title">
+          <div>
+            <span className="min-kicker">04 / about purcar.me</span>
+            <h2 id="about-title">Made for the fun of trying things.</h2>
+          </div>
+          <p>
+            purcar.me is a small project where I test models, share the ones I release, and keep a home for whatever I build next. No big pitch—just experiments, updates, and models you can try.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </section>
       </main>
-    </div>
+
+      <HeroFooter />
+    </>
   );
 }

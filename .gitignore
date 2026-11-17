@@ -16,6 +16,7 @@
 # next.js
 /.next/
 /out/
+/public/onnxruntime/
 
 # production
 /build
@@ -39,3 +40,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# admin panel
+/admin-panel
+
+# loose screenshots at root
+/*.png
