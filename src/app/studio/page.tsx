@@ -35,7 +35,8 @@ const ATOM_COLORS: Record<string, string> = {
   Br: "#fb923c", F: "#2dd4bf", S: "#facc15", P: "#c084fc",
   H: "#e2e8f0", Na: "#818cf8", Fe: "#fbbf24",
 };
-const MODEL_URL = "/download/model?v=phc-1-onnx-1";
+const MODEL_URL = "/download/model?v=phc-1-onnx-2";
+const MODEL_SIZE = 203_328_124;
 const ELEMENTS = "H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe Cs Ba La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn Fr Ra Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr Rf Db Sg Bh Hs Mt Ds Rg Cn Nh Fl Mc Lv Ts Og".split(" ");
 const ATOMIC_NUMBERS = Object.fromEntries(ELEMENTS.map((element, index) => [element, index + 1]));
 const TYPICAL_VALENCE: Record<string, number> = {
@@ -72,7 +73,7 @@ export default function StudioPage() {
   const [ptOpen, setPtOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [keepAll, setKeepAll] = useState(false);
-  const [status, setStatus] = useState("PHC-1 runs in your browser · first prediction downloads the model.");
+  const [status, setStatus] = useState("PHC-1 runs in your browser · first prediction fetches the model.");
 
   const [smilesA, setSmilesA] = useState("CC(=O)Cl");
   const [smilesB, setSmilesB] = useState("CN");
@@ -159,58 +160,72 @@ export default function StudioPage() {
       const ort = await import("onnxruntime-web/wasm");
       ort.env.wasm.wasmPaths = "/onnxruntime/";
 
-      setStatus("Loading the PHC-1 model into this browser…");
+      setStatus("Fetching PHC-1 model…");
       let cache: Cache | null = null;
       let response: Response | undefined;
+      let shouldCache = false;
       try {
-        cache = await caches.open("purcar-phc-1-model-v1");
+        cache = await caches.open("purcar-phc-1-model-v2");
         response = await cache.match(MODEL_URL);
       } catch {
         cache = null;
       }
       if (!response) {
         response = await fetch(MODEL_URL, { cache: "force-cache" });
-        if (cache && response.ok) void cache.put(MODEL_URL, response.clone()).catch(() => undefined);
+        shouldCache = true;
       }
       if (!response.ok) {
         const detail = (await response.text()).trim();
-        throw new Error(detail || `Model download failed (${response.status})`);
+        throw new Error(detail || `Model fetch failed (${response.status})`);
       }
 
-      const total = Number(response.headers.get("content-length")) || 0;
-      let modelBytes: Uint8Array | null = total ? new Uint8Array(total) : null;
-      const chunks: Uint8Array[] = [];
-      if (response.body) {
-        const reader = response.body.getReader();
-        let received = 0;
-        let lastUpdate = 0;
+      const reportedSize = Number(response.headers.get("content-length")) || MODEL_SIZE;
+      if (reportedSize !== MODEL_SIZE) {
+        if (cache) await cache.delete(MODEL_URL).catch(() => false);
+        throw new Error(`PHC-1 model size mismatch (${reportedSize.toLocaleString()} bytes).`);
+      }
+      const modelBytes = new Uint8Array(MODEL_SIZE);
+      const reader = response.body?.getReader();
+      if (!reader) throw new Error("PHC-1 response did not include a readable body. Please retry.");
+      const cacheWrite = cache && shouldCache
+        ? cache.put(MODEL_URL, response.clone()).then(() => true, () => false)
+        : null;
+      let received = 0;
+      let lastUpdate = 0;
+      try {
         while (true) {
           const { done, value } = await reader.read();
           if (done) break;
-          if (modelBytes) modelBytes.set(value, received);
-          else chunks.push(value);
+          if (received + value.byteLength > MODEL_SIZE) {
+            throw new Error("PHC-1 response was larger than expected. Please retry.");
+          }
+          modelBytes.set(value, received);
           received += value.byteLength;
           const now = Date.now();
-          if (now - lastUpdate > 180 || (total && received >= total)) {
-            const downloaded = `${(received / 1024 / 1024).toFixed(0)} MB`;
-            const percent = total ? ` · ${Math.min(99, Math.round(received / total * 100))}%` : "";
-            setStatus(`Downloading PHC-1 · ${downloaded}${percent}`);
+          if (now - lastUpdate > 180 || received >= MODEL_SIZE) {
+            const fetched = `${(received / 1024 / 1024).toFixed(0)} MB`;
+            const percent = ` · ${Math.min(99, Math.round(received / MODEL_SIZE * 100))}%`;
+            setStatus(`Fetching PHC-1 · ${fetched}${percent}`);
             lastUpdate = now;
           }
         }
+      } catch (error) {
+        if (cacheWrite) await cacheWrite;
+        if (cache) await cache.delete(MODEL_URL).catch(() => false);
+        throw error;
       }
-      if (!modelBytes) {
-        modelBytes = new Uint8Array(total || chunks.reduce((sum, chunk) => sum + chunk.byteLength, 0));
-        let offset = 0;
-        for (const chunk of chunks) { modelBytes.set(chunk, offset); offset += chunk.byteLength; }
+      if (received !== MODEL_SIZE) {
+        if (cacheWrite) await cacheWrite;
+        if (cache) await cache.delete(MODEL_URL).catch(() => false);
+        throw new Error(`PHC-1 fetch was incomplete (${received.toLocaleString()} of ${MODEL_SIZE.toLocaleString()} bytes). Please retry.`);
       }
+      if (cacheWrite) await cacheWrite;
 
       setStatus("Starting ONNX Runtime WebAssembly…");
       const session = await ort.InferenceSession.create(modelBytes, {
         executionProviders: ["wasm"],
         graphOptimizationLevel: "all",
       });
-      modelBytes = null;
       sessionRef.current = session;
       setStatus("PHC-1 ready · running privately in this browser.");
       return session;
