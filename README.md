@@ -18,9 +18,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## HexoChem Studio model
 
-PHC-1 predictions run in the visitor's browser with ONNX Runtime WebAssembly. The model file lives at `models/phc-1.onnx` and is streamed at `/download/model` when the visitor first predicts; the browser Cache API keeps a copy for later visits. The runtime's WASM files are copied from the installed package before `npm run dev` and `npm run build`.
+PHC-1 predictions run in the visitor's browser with ONNX Runtime WebAssembly. The model file lives at `models/phc-1.onnx` and is fetched through `/download/model` when the visitor first predicts; the browser Cache API keeps a copy for later visits. The runtime's WASM files are copied from the installed package before `npm run dev` and `npm run build`.
 
-For deployment, track `models/*.onnx` with Git LFS so the 203 MB file is available to the host. The model must be served over HTTPS. Since browser inference requires sending the model to the visitor, it is public and can be saved; encrypting it at rest cannot hide it from someone who downloads it.
+For deployment on Cloudflare, `/download/model` redirects the browser to the public GitHub LFS object so the large response is served directly by GitHub's file CDN. The model is about 203 MB, so it cannot be shipped as a Cloudflare static asset or bundled into the Worker. Set the Worker runtime variable `PHC_MODEL_URL` only if the model is moved to another public object URL. Browser inference requires sending the model to the visitor; anyone can save a copy of the file.
 
 SMILES conversion and dataset examples still use the optional Python API. Set `HEXOCHEM_API_URL` to a deployed API base URL if those features should work on the hosted site. Locally, the development default is `http://127.0.0.1:7860`.
 

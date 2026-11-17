@@ -1,0 +1,400 @@
+[
+  {
+    "slug": "dpit-2026",
+    "title": "2nd Place at DpIT Academy 2026<->Team Thores",
+    "date": "2026-11-05",
+    "category": "Portfolio, Competition",
+    "excerpt": "Winning 2nd Place (Award II) at DpIT Academy 2026 with Team Thores, mentored by BMW Techworks Romania<->a 6-month journey from idea to live demo on a mattress and the final gala.",
+    "shortStory": "We won 2nd Place at DpIT Academy 2026 with Team Thores! A 6-month journey with BMW Techworks Romania mentorship, 21 competing teams, live demo moments, and an unforgettable awards ceremony.",
+    "cover": "/images/dpit-team.jpg",
+    "gallery": [
+      "/images/dpit-team.jpg",
+      "/images/dpit-award.jpg"
+    ],
+    "body": [
+      "Today we won 2nd Place at DpIT Academy 2026! 🥈 But honestly, this was never just a simple competition<->it was an entire six-month journey and one of the most fulfilling experiences I've ever lived through.",
+      "From six months ago when I first met the team and we started brainstorming an ambitious idea together with our mentors from BMW Techworks Romania, all the way to today, November 5, at the final awards gala<->we shared so many incredible, unforgettable moments.",
+      "Throughout DpIT 2026, we had access to lots of free courses and workshops organized and offered by DpIT Academy<->covering business techniques, pitch presentations, computer science foundations, AI, and so much more. Tbh there were way more types of workshops than I actually managed to attend (ca mno, you can't make it to absolutely everything (: ), but what we took away was super valuable. Still, beyond the courses, it was truly about the people we met and the team we built. DpIT genuinely teaches you what it means to work as a team in a real company setting: at first, you usually don't even know most of your teammates, but step by step you learn to align, solve friction, and turn an abstract concept into a real, polished product.",
+      "Our team<->**Team Thores**<->was formed by Ian Ștefan-Cazacu, Maria Borgovan, Natasha Oprean, Patric Baidoc, Andrei Pop, and myself. And of course, a massive shoutout to our BMW Techworks Romania mentors who helped us tremendously throughout this whole journey: Vlad Stoian, Cristian Matei, and Timea Fodor (: (as well as Elena Ștefan-Cazacu, president of Asociația DpIT).",
+      "What we experienced today and across these six months is honestly ineffable.",
+      "## The Jury Demo on a Mattress (:",
+      "About a month ago, the official project evaluation took place: 21 teams pitched 21 projects backed by numerous partner companies. We even managed to make the jury burst into laughter: while two of my teammates were giving the pitch presentation, I was literally on a mattress in front of everyone doing the live, real-time demo of our application! It was super fun, ridiculously stressful, and an absolute rollercoaster of emotions that I would relive in a heartbeat (:.",
+      "## The Exhibition Booth & The Wheel",
+      "Then came today: alongside the awards ceremony to find out who would take 1st, 2nd, and 3rd place plus the special awards, all 21 teams had their own interactive exhibition booth! It was an absolute blast. We had tons of cool swag from our partner company as well as merchandise we designed ourselves, and we even built our own case-opening prize wheel that had a non-stop queue of people coming over to spin it. Sadly, we didn't end up taking home the Public Vote award (we were super close!), but the energy and fun at our booth was unmatched.",
+      "## The Gala & The 2nd Place Announcement",
+      "And then came the awards gala<->two solid hours of pure, concentrated tension. Following the speeches by company leaders and event sponsors, the awards segment began.",
+      "First were the special awards offered by individual companies to various teams so everyone had a chance to get recognized. Unfortunately, we didn't get any of them ): At first, I felt pretty sad and wondered if all our hard work had gone unnoticed.",
+      "Then came the top podium prizes for 1st, 2nd, and 3rd place.",
+      "3rd Place was announced... nothing for us. The stress levels were off the charts.",
+      "And then... 2nd Place (Award II)... **TEAM THORES!** 🎉",
+      "I was so overwhelmingly happy, and the feeling was unbelievable!",
+      "call:Be sure to check out our official website at https://thores.ro/ to see more details about everything we built :)))",
+      "I am so incredibly happy today, and the emotions I felt are truly ineffable. I genuinely can't wait to participate again next year, maybe even meet a new team, and build something beautiful from zero once more. Thank you everyone (: Team Thores <3"
+    ],
+    "links": [
+      {
+        "title": "Thores<->Official Website",
+        "url": "https://thores.ro/",
+        "badge": "PROJECT",
+        "description": "Official website and product showcase developed by Team Thores during DpIT Academy 2026."
+      },
+      {
+        "title": "DpIT Academy (Descoperă-ți Pasiunea în IT)",
+        "url": "https://dpit.ro/",
+        "badge": "ACADEMY",
+        "description": "High-school educational program and product competition organized by Asociația Descoperă-ți Pasiunea în IT."
+      }
+    ]
+  },
+  {
+    "slug": "swiftfox",
+    "title": "swiftfox",
+    "date": "2026-11-01",
+    "category": "AI ARCHITECTURE, MULTIMODAL",
+    "excerpt": "The SwiftFox architecture has evolved through many iterations: a native multimodal language model (text + up to 3 images) built with RoPE, 2D residual patch projections, SwiGLU activations, and dynamic entropy-driven adaptive Top-K MoE routing.",
+    "shortStory": "Inside SwiftFox: A deep dive into building a custom multimodal language model featuring RoPE attention, 2D residual visual patch projections, SwiGLU activations, and dynamic entropy-driven adaptive Top-K MoE routing.",
+    "cover": "/images/swiftfox.png",
+    "gallery": [],
+    "body": [
+      "💔The SwiftFox architecture has gone through SO many iterations and existential crises (: and no, today I'm not here to debate names 😭🙏.",
+      "Tbh, it was lowkey such a fun and crazy project to build, and I'm definitely going to keep developing it. If you remember my October 28 post, I attached an image to my earlier prototype, asked it what was inside, and it literally hallucinated complete non-sense code with a perplexity of 850.309159... like, what else could I even expect?! 💔 That kind of pain makes you want to rewrite everything from absolute scratch.",
+      "So I sat down and built SwiftFox: a multimodal language model implemented completely in PyTorch that ingests both image patches and raw text tokens and autoregressively generates clean responses. The architecture is built to work seamlessly whether you give it pure **Text → Text** or multiple visual inputs for **Image + Text → Text**.",
+      "And before anyone asks: YES, it already has **native multi-image cross-frame reasoning** built right into its core! In my training pipeline, I pass up to 3 images at once (and structurally it can scale to even more). It doesn't process images in isolation<->it flattens patches from ALL images into the exact same self-attention sequence, meaning the model can literally compare frames, track visual changes, and solve tasks like Spot-The-Diff natively 😭🙏.",
+      "call:SwiftFox flattens all patches across multiple images and text tokens into a single autoregressive sequence, calculating dense cross-image attention with RoPE, and routing tokens through an Adaptive Entropy Mixture of Experts (MoE) powered by SwiGLU.",
+      "diagram:swiftfox_flow",
+      "## 1. The Real Timeline (:",
+      "timeline:School Day | 3 Random CS Classes | Was sitting through 3 computer science classes at school, got bored, and hammered out the core multimodal architecture in an hour and a half. | 1.5 HOURS\nEvening | 1 Hour at Home | Got back home, spent about one more hour polishing the patching pipeline and setting up the training loop. | +1 HOUR\nNext 2 Days | The 48h Training Run | Trained it for 2 straight days. Saw that it was actually learning and converging, but realized it could be way better. | 2 DAYS\n~2 Weeks Later | Why Not MoE? | Came back to the code after about a week and a half or two. Decided to slap an Adaptive Mixture of Experts with SwiGLU onto it because honestly... why not (: that's literally it. | MOE",
+      "## 2. Multi-Image Unified Sequence: How Cross-Frame Reasoning Actually Works",
+      "Let's clear this up right away because this is one of the coolest parts of the whole model: how does SwiftFox look at multiple images and understand relationships between them? (: In my notebook (`very_very_random_file.ipynb`), I mapped out the exact sequence design:",
+      "code:text:sequence_layout.txt\nText chat mode:\n[<user>] {input} [<assistant>] {generated_text}\n\nMulti-image mode (up to 3 images, expandable to more):\n[IMG1_1] ... [IMG1_16]  [IMG2_1] ... [IMG2_16]  [<user>] [T1] ... [TN]  [<assistant>] [G1] ... [GM]",
+      "Think about what this means for cross-frame reasoning: most architectures force you to run separate image encoders, pool each image into a single vector, or use clunky cross-attention fusion adapters that lose spatial granularity. In SwiftFox, every image is sliced into 16 distinct patches (64x64). If you pass 2 images, you get 32 visual patch tokens. If you pass 3 images, you get 48 visual patch tokens.",
+      "Because all 48 visual tokens are concatenated alongside the text prompt into the **same** Multi-Head Attention block, the transformer learns relationships between image patches *across different frames*! Image 2's patches can directly query Image 1's patches. That's how SwiftFox tackles datasets like Spot-the-diff and multi-image instructions: the model literally sees what changed from frame A to frame B.",
+      "Here is the exact visual encoder implementation from my notebook handling 5D tensors `(B, num_imgs, C, H, W)` and slicing them into 16 spatial patches:",
+      "code:python:image_encoder.py\nimport torch\nimport torch.nn as nn\n\nclass ResidualBlock2D(nn.Module):\n    def __init__(self, in_, out_, stride_=1):\n        super().__init__()\n        self.conv1 = nn.Sequential(\n            nn.Conv2d(in_, out_, kernel_size=3, stride=stride_, padding=1),\n            nn.BatchNorm2d(out_),\n            nn.ReLU(),\n            nn.Conv2d(in_, out_, kernel_size=3, stride=1, padding=1),\n            nn.BatchNorm2d(out_)\n        )\n        self.identity_ = nn.Identity()\n        if in_ != out_ or stride_ != 1:\n            self.identity_ = nn.Sequential(\n                nn.Conv2d(in_, out_, kernel_size=1, stride=stride_),\n                nn.BatchNorm2d(out_)\n            )\n        self.relu = nn.ReLU()\n\n    def forward(self, x):\n        return self.relu(self.conv1(x) + self.identity_(x))\n\nclass ImageEncoder(nn.Module):\n    def __init__(self, d_model):\n        super().__init__()\n        self.more_layers = nn.Sequential(\n            ResidualBlock2D(3, 64),\n            ResidualBlock2D(64, 128),\n            ResidualBlock2D(128, 256),\n            nn.Conv2d(256, 256, kernel_size=3, stride=1, padding=1),\n            nn.BatchNorm2d(256),\n            nn.ReLU(),\n            nn.AdaptiveMaxPool2d((8, 8)),\n            nn.Flatten(),\n            nn.Linear(256 * 8 * 8, d_model)\n        )\n\n    def forward(self, x, batch_size=None):\n        if x.dim() == 5:\n            batch_size = x.size(0)\n            x = x.view(-1, x.size(2), x.size(3), x.size(4))\n        if batch_size is None:\n            batch_size = x.size(0)\n\n        total_images = x.size(0)\n        H_patch = x.size(2) // 4\n        W_patch = x.size(3) // 4\n        x = x.reshape(total_images, 16, x.size(1), H_patch, W_patch)\n        x = x.reshape(16 * total_images, x.size(1), H_patch, W_patch)\n        x = self.more_layers(x)\n        \n        return x.reshape(batch_size, -1, x.size(-1))",
+      "## 3. Rotary Position Embeddings (RoPE) & Attention",
+      "Standard absolute positional encodings get super awkward when you glue multiple images in front of text tokens. Static 1D sinusoidal position vectors have no clue how to handle spatial patches, let alone multiple sequential images.",
+      "Instead, I implemented **RoPE (Rotary Position Embeddings)** directly on Query and Key vectors. RoPE rotates pairs of coordinates in feature space using complex exponentials. When Query and Key compute dot-product attention, their absolute positions cancel out, leaving only the relative distance `(m - n)`! This makes relative spatial proximity between patches and relative causal distance between tokens feel completely natural.",
+      "Here is the exact RoPE and Multi-Head Attention module from Cell 3 of `very_very_random_file.ipynb`:",
+      "code:python:rope_mha.py\nimport math\nimport torch\nimport torch.nn as nn\n\nclass RoPE(nn.Module):\n    def __init__(self, head_dim):\n        super().__init__()\n        inv_freq = torch.exp(\n            torch.arange(0, head_dim, 2) * (-1) * math.log(10000) / head_dim\n        )\n        self.register_buffer(\"inv_freq\", inv_freq)\n\n    def forward(self, x):\n        B, T, H, D = x.shape\n        position = torch.arange(0, T, device=x.device)\n        freq = torch.outer(position, self.inv_freq)\n\n        cos_ = freq.cos().unsqueeze(0).unsqueeze(0)\n        sin_ = freq.sin().unsqueeze(0).unsqueeze(0)\n\n        x_even = x[..., ::2]\n        x_odd = x[..., 1::2]\n        x_rot = x_even * cos_ - x_odd * sin_\n        y_rot = x_even * sin_ + x_odd * cos_\n        return torch.stack((x_rot, y_rot), dim=-1).flatten(-2)\n\nclass MHA(nn.Module):\n    def __init__(self, d_model, nhead, dropout=0.1):\n        super().__init__()\n        self.d_model = d_model\n        self.nhead = nhead\n        self.head_dim = d_model // nhead\n\n        self.wq = nn.Linear(d_model, d_model)\n        self.wk = nn.Linear(d_model, d_model)\n        self.wv = nn.Linear(d_model, d_model)\n        self.wo = nn.Linear(d_model, d_model)\n        self.d1 = nn.Dropout(dropout)\n        self.d2 = nn.Dropout(dropout)\n        self.rope = RoPE(self.head_dim)\n\n    def forward(self, x, src_key_padding_mask=None, src_mask=None):\n        B, T, F = x.shape\n        k = self.wk(x).transpose(1, 2).view(B, T, self.nhead, self.head_dim)\n        q = self.wq(x).transpose(1, 2).view(B, T, self.nhead, self.head_dim)\n        v = self.wv(x).transpose(1, 2).view(B, T, self.nhead, self.head_dim)\n\n        k = self.rope(k)\n        q = self.rope(q)\n\n        score = (q @ k.transpose(-2, -1)) / math.sqrt(self.head_dim)\n        if src_key_padding_mask is not None:\n            src_key_padding_mask = src_key_padding_mask.unsqueeze(1).unsqueeze(2)\n            score = score.masked_fill(src_key_padding_mask == float(\"-inf\"), float(\"-inf\"))\n        if src_mask is not None:\n            score = score.masked_fill(src_mask, float(\"-inf\"))\n\n        score = torch.softmax(score, dim=-1)\n        score = self.d1(score)\n        score = score.view(B, T, F).contiguous()\n        return self.d2(self.wo(score))",
+      "## 4. SwiGLU & The Adaptive Entropy MoE",
+      "Now we get to the real meat of the architecture: the **Mixture of Experts (MoE)** backbone. Why run one monolithic feedforward layer when you can specialize computation across 64 specialized experts?",
+      "### SwiGLU: Gated Feedforward",
+      "First off, vanilla ReLU or GELU feedforward networks are cool, but modern LLMs get way better gradient flow and expressive capacity out of SwiGLU. The SwiGLU block splits the projection into a gated pair:",
+      "code:python:swiglu.py\nimport torch.nn as nn\nimport torch.nn.functional as F\n\nclass SwiGLU(nn.Module):\n    def __init__(self, d_model, dim_feedforward):\n        super().__init__()\n        self.w1 = nn.Linear(d_model, dim_feedforward)\n        self.w2 = nn.Linear(d_model, dim_feedforward)\n        self.w3 = nn.Linear(dim_feedforward, d_model)\n\n    def forward(self, x):\n        return self.w3(F.silu(self.w1(x)) * self.w2(x))",
+      "### The Adaptive Top-K Router",
+      "Here was my biggest realization: in standard MoE (like Mixtral 8x7B), K is strictly fixed to e.g. top-2. But why should every single token wake up the exact same number of experts?! 😭🙏",
+      "If a token is dead obvious (like a period or a common preposition), the router distribution has high confidence, meaning Shannon entropy H(x) is almost 0. Waking up 4 or 8 heavy experts is just wasting GPU cycles! But when the token is tricky, ambiguous, or bridging visual and text features, the distribution flattens, entropy spikes, and you want to call in a whole squad of experts.",
+      "So I formulated the **Adaptive Top-K rule**:",
+      "formula:Adaptive Top-K Dynamic Allocation\nmath: K_{\\text{adaptive}} = K_{\\text{min}} + \\lfloor H(x) \\cdot (K_{\\text{max}} - K_{\\text{min}}) \\rfloor\ndesc: Scales expert capacity dynamically based on normalized Shannon routing entropy.\nvar: K_{\\text{min}} = Base floor of active experts (e.g. 4)\nvar: K_{\\text{max}} = Ceiling of active experts (e.g. 64)\nvar: H(x) = Normalized Shannon entropy: -sum(p * ln(p + 1e-9)) / ln(K_{\\text{max}})",
+      "And here is the actual PyTorch implementation from Cell 10 of `very_very_random_file.ipynb`, routing experts dynamically and accumulating outputs with `output.index_put_`:",
+      "code:python:adaptive_moe.py\nclass MoE(nn.Module):\n    def __init__(self, input_dim, hidden_dim, min_k=4, max_k=64):\n        super().__init__()\n        assert min_k < max_k\n        self.router = nn.Linear(input_dim, max_k)\n        self.experts = nn.ModuleList([\n            SwiGLU(input_dim, hidden_dim) for _ in range(max_k)\n        ])\n        self.max_k = max_k\n        self.min_k = min_k\n\n    def forward(self, x):\n        B, T, F = x.shape\n        logits = self.router(x)\n        probs = torch.softmax(logits, dim=-1)\n        \n        entropy = -torch.sum(probs * torch.log(probs + 1e-9), dim=-1) / math.log(self.max_k)\n        adaptive_k = self.min_k + torch.floor(entropy * (self.max_k - self.min_k)).long()\n\n        top_probs, top_indices = torch.topk(probs, adaptive_k, dim=-1)\n        weights = top_probs / top_probs.sum(dim=-1, keepdim=True)\n\n        output = torch.zeros(B, T, F, device=x.device, dtype=x.dtype)\n\n        for i_exp, expert in enumerate(self.experts):\n            b_indices, t_indices, k_indices = torch.where(top_indices == i_exp)\n            if b_indices.numel() == 0:\n                continue\n            expert_weights = weights[b_indices, t_indices, k_indices]\n            expert_input = probs[b_indices, t_indices]\n            expert_output = expert(expert_input)\n\n            output.index_put_(\n                (b_indices, t_indices),\n                expert_weights * expert_output,\n                accumulate=True\n            )\n\n        return x + output, probs, top_indices",
+      "## 5. Loss: Cross-Entropy + Load Balancing",
+      "Anyone who has trained MoEs knows the infamous nightmare: router collapse 💔.",
+      "If you don't incentivize the router to spread the work, it will quickly get lazy and send 99% of all tokens to Expert 0, while the remaining 63 experts sit around with zero gradients. To prevent this, I added an auxiliary **Load Balancing Loss** alongside the autoregressive cross-entropy loss:",
+      "formula:Total SwiftFox Optimization Objective\nmath: \\mathcal{L}_{\\text{total}} = \\mathcal{L}_{\\text{CE}} + \\mathcal{L}_{\\text{LB}}\ndesc: Joint objective combining autoregressive token prediction with router distribution balance.\nvar: \\mathcal{L}_{\\text{CE}} = Standard Cross Entropy loss computed on targets text[1:]\nvar: \\mathcal{L}_{\\text{LB}} = Load Balance Loss: E * sum(P_i * f_i)\nvar: P_i = Average routing probability across all tokens for expert i\nvar: f_i = Actual fraction of tokens assigned to expert i",
+      "Here is the auxiliary load balance loss function directly from the notebook:",
+      "code:python:load_balance.py\ndef load_balance_loss(probs, top_indices, n_e):\n    B, T, F = probs.shape\n    importance = torch.mean(probs, dim=0)\n    count = torch.bincount(top_indices.reshape(-1), minlength=n_e)\n    frequency = count.float() / (B * T * F)\n    return n_e * torch.sum(importance * frequency)",
+      "## 6. Autoregressive Prediction: Predicting text[1:]",
+      "During training, the shifted sequence mechanics work cleanly:",
+      "When I feed `model(text, images)`, what I pass into the network is the sequence without the last token. The model is trained to predict `text[1:]` (the tokens shifted by one step to the right). The loss is calculated exclusively on the generated assistant tokens, conditioning on both the preceding multi-image visual patches and the user instructions.",
+      "code:python:training_step.py\nlogits, all_probs, all_indices = model(text=input_ids[:, :-1], images=images)\n\ntargets = input_ids[:, 1:]\nloss_ce = criterion(logits.reshape(-1, logits.size(-1)), targets.reshape(-1))\n\nloss_lb = 0.0\nfor probs, indices in zip(all_probs, all_indices):\n    loss_lb += load_balance_loss(probs, indices, n_e=64)\n\ntotal_loss = loss_ce + loss_lb\ntotal_loss.backward()\noptimizer.step()\nscheduler.step()",
+      "💔Hope this is not a fail, whatever (: Watching the perplexity drop from that horrific 850.3 to crisp, coherent predictions on both multi-image inputs and text prompts makes the sleepless nights completely worth it.",
+      "Having multi-image cross-frame reasoning natively working without heavy external vision backbones is super exciting. Next up: scaling up the parameter count, pushing the context window even further, and releasing the model checkpoints once fine-tuning wraps up. Stay tuned (: !"
+    ],
+    "links": [
+      {
+        "title": "SwiftFox Project Overview",
+        "url": "/projects#swift",
+        "badge": "PROJECT",
+        "description": "General architecture status and project details on ihatebaselines."
+      }
+    ]
+  },
+  {
+    "slug": "28-october",
+    "title": "28 october..?",
+    "date": "2026-10-28",
+    "category": "Thoughts, Small Blog",
+    "excerpt": "whatever😭",
+    "shortStory": "whatever😭",
+    "cover": "/images/ihatebaselines.jpg",
+    "gallery": [],
+    "body": [
+      "💔I'm so incredibly bored that I decided to rewrite everything from scratch on the AI model that ig I'll make public if it actually turns out good.",
+      "During the latest tests, I attached an image and asked it what was inside😭🙏... and it literally generated complete non-sense code.",
+      "I mean, with a perplexity of 850.309159, what else could I even expect...",
+      "lowkey",
+      "img:/images/glitched_cat.jpg",
+      "💔hope this is not a fail, whatever",
+      "also if you happen to spot some weird glitch + pixelated effects across the site (if they're even still there)... I'm not gonna talk about them right now, you'll see in the future (:"
+    ]
+  },
+  {
+    "slug": "ccc-2026",
+    "title": "CCC 2026<->School & Data/AI",
+    "date": "2026-10-24",
+    "category": "Portfolio, AI Competition",
+    "excerpt": "Place School: 14th, Place Data/AI: 31st (with team PretrainedLanguageModel)<->a very interesting experience held back by matchmaking issues and the lack of fairness around paid AI subscriptions.",
+    "shortStory": "CCC 2026 was a very interesting experience where we placed 31st in Data/AI with team PretrainedLanguageModel and 14th in School, heavily impacted by strange matchmaking queues and the lack of fairness caused by top-tier paid AI subscriptions.",
+    "cover": "/images/ccc.png",
+    "gallery": [
+      "/images/ccc2.png"
+    ],
+    "body": [
+      "Cloudflight Coding Contest (CCC) 2026 was a very interesting experience overall, even though unfortunately this year we didn’t manage to achieve our best results<->finishing in 31st place in the Data/AI category with team PretrainedLanguageModel, and 14th place in the School phase.",
+      "From our team's perspective, one of the biggest obstacles in the Data/AI competition was the matchmaking system, which felt quite poorly balanced. Because the matchmaking queue simply wouldn't put us into games consistently, we couldn't play nearly as many matches with our AI as we should have. By the end, we only had around 100 matches played while other teams had 300 to 400 matches<->which was really strange. There were even stretches where we sat for 10 minutes straight without being placed into a single match, which was honestly pretty sad.",
+      "Because we weren't getting matched, our ranking kept sliding down toward the end: after being up in 2nd place, we dropped to 10th, then 20th, and finally 31st.",
+      "On top of the matchmaking issues, there were the paid AI subscriptions ): We're not denying that we vibecoded too, but it's honestly sad that there is no real fairness anymore. Top teams come in paying for the most expensive tier subscription of a model just to turn a profit by taking the top spots<->and it's sad that others no longer stand a real chance of winning. Even when you genuinely try hard to craft good, explicit prompts for your model, you still can't match the performance of those top paid subscriptions without paying up ):",
+      "In the School category, we also finished in 14th place<->largely for the same reason, going up against vibecoders with top-tier paid AI subscriptions ): Still, despite the frustrations with the matchmaking queue and the current pay-to-win feeling of AI subscriptions, competing alongside PretrainedLanguageModel made it a memorable contest."
+    ]
+  },
+  {
+    "slug": "from-algorithms-to-neurons",
+    "title": "1st Place at From Algorithms to Neurons<->AI Competition & Hackathon",
+    "date": "2026-08-26",
+    "category": "Portfolio, AI Competition",
+    "excerpt": "1st place in the AI Competition (Group A, Grades 7–10) and 9th place in the 24h Hackathon at Constanța Maritime University.",
+    "shortStory": "I finished From Algorithms to Neurons with 1st place in the AI Competition, Group A (Grades 7–10) with ~260/300 points in Signal Analysis, and 9th place in the 24-hour hackathon with team Camera 505.",
+    "cover": "/images/algorithms-to-neurons-logo.png",
+    "gallery": [
+      "/images/algorithms-to-neurons/event-photo-01.jpg",
+      "/images/algorithms-to-neurons/event-photo-02.jpg",
+      "/images/algorithms-to-neurons/event-photo-03.jpg",
+      "/images/algorithms-to-neurons/event-photo-04.jpg",
+      "/images/algorithms-to-neurons/event-photo-05.jpg",
+      "/images/algorithms-to-neurons/event-photo-06.jpg",
+      "/images/algorithms-to-neurons/event-photo-07.jpg",
+      "/images/algorithms-to-neurons/event-photo-08.jpg",
+      "/images/algorithms-to-neurons/event-photo-09.jpg",
+      "/images/algorithms-to-neurons/event-photo-10.jpg",
+      "/images/algorithms-to-neurons/event-photo-11.jpg",
+      "/images/algorithms-to-neurons/event-photo-12.jpg",
+      "/images/algorithms-to-neurons/event-photo-13.jpg"
+    ],
+    "links": [
+      {
+        "title": "From Algorithms to Neurons<->Official Site",
+        "url": "https://www.algorithms-to-neurons.com/",
+        "description": "Official event website with schedule, speakers, IEEE backing, and scientific showcase."
+      },
+      {
+        "title": "AI Competition Tasks<->Group A (Grades 7–10)",
+        "url": "https://platform.olimpiada-ai.ro/ro/competitions/29",
+        "description": "Signal Analysis and audio processing challenges on platform.olimpiada-ai.ro (1st place, ~260/300 pts)."
+      },
+      {
+        "title": "AI Competition Tasks<->Group B (Grades 11–12)",
+        "url": "https://platform.olimpiada-ai.ro/ro/competitions/30",
+        "description": "Signal processing tasks and problem sets for senior division competitors."
+      }
+    ],
+    "body": [
+      "I’m happy to share that From Algorithms to Neurons, a five-day event bringing together young people from across Romania around AI, STEM, signal processing and technology, has come to an end, and I’m even happier to say that I finished it with 1st place in the AI Competition, Group A (Grades 7–10)! 🥇",
+      "The AI competition was one of the first challenges of the event, but that definitely didn’t make it easy. The main theme was Signal Analysis, with many of the problems focusing on signals and audio. Although I hadn’t worked extensively with audio preprocessing before, I was able to learn from the available documentation, experiment with different approaches, and ultimately score approximately 260/300 points.",
+      "The event also included a 24-hour hackathon built around the theme “Signals That Can Change Our World.” I decided to take on a fairly ambitious project, and unfortunately, due to several technical issues, I wasn’t able to fix everything and get the entire system working within the deadline.",
+      "Still, together with my team Camera 505, we managed to achieve 9th place in the hackathon. It was an incredibly valuable experience and showed me how different building a complete system under time pressure can be from solving an individual competition problem.",
+      "But in the end, competitions are not only about rankings. They are also about the people you meet, the experiences you share, and the things you learn along the way. I met many people I already knew from national Olympiads, but I also met many new students who genuinely impressed me with their scientific projects, research ideas and posters presented during the Scientific Showcase. Seeing so many young people working on serious scientific and technological projects was one of my favorite parts of the entire event.",
+      "And, of course, there was the location. 🌊 The event took place at the Constanța Maritime University, so naturally, going to the seaside was part of the experience too. 😄",
+      "I’m especially grateful to have been part of an event organized with the support of IEEE Romania Section, together with the “Informatică pentru Viitor” Association, and hosted academically by the Constanța Maritime University. The event was also selected as part of the IEEE Region 8 Acceleration Program 2026, which made the whole experience even more meaningful.",
+      "With this, I can probably say that I’ve wrapped up my competitions from 10th grade, and with August almost over, it feels like the perfect way to close this chapter. Thank you to everyone who organized the event, to the participants I had the chance to meet, and to everyone who made these five days such a great experience. I’m already looking forward to the next competitions and challenges in 11th grade. 🔥🐧",
+      "[#ArtificialIntelligence](https://www.linkedin.com/search/results/all/?keywords=%23artificialintelligence&origin=HASH_TAG_FROM_FEED) [#AI](https://www.linkedin.com/search/results/all/?keywords=%23ai&origin=HASH_TAG_FROM_FEED) [#STEM](https://www.linkedin.com/search/results/all/?keywords=%23stem&origin=HASH_TAG_FROM_FEED) [#MachineLearning](https://www.linkedin.com/search/results/all/?keywords=%23machinelearning&origin=HASH_TAG_FROM_FEED) [#SignalProcessing](https://www.linkedin.com/search/results/all/?keywords=%23signalprocessing&origin=HASH_TAG_FROM_FEED) [#Hackathon](https://www.linkedin.com/search/results/all/?keywords=%23hackathon&origin=HASH_TAG_FROM_FEED) [#IEEE](https://www.linkedin.com/search/results/all/?keywords=%23ieee&origin=HASH_TAG_FROM_FEED) [#Science](https://www.linkedin.com/search/results/all/?keywords=%23science&origin=HASH_TAG_FROM_FEED) [#Research](https://www.linkedin.com/search/results/all/?keywords=%23research&origin=HASH_TAG_FROM_FEED) [#Students](https://www.linkedin.com/search/results/all/?keywords=%23students&origin=HASH_TAG_FROM_FEED) [#Romania](https://www.linkedin.com/search/results/all/?keywords=%23romania&origin=HASH_TAG_FROM_FEED)"
+    ]
+  },
+  {
+    "slug": "untold-volunteer",
+    "title": "My Volunteer Experience at UNTOLD",
+    "date": "2026-08-16",
+    "category": "Portfolio, Volunteer",
+    "excerpt": "A quick overview of my wonderful one-week volunteer experience at UNTOLD festival in Cluj-Napoca.",
+    "shortStory": "Volunteering at UNTOLD Emergency was a wonderful 7-day experience. From getting our red shirts on Monday to partying at Martin Garrix on Sunday, here is a day-by-day diary of what it was like.",
+    "cover": "/images/untold-new-1.jpg",
+    "gallery": [
+      "/images/untold-new-1.jpg",
+      "/images/untold-new-2.png",
+      "/images/untold-new-3.jpg",
+      "/images/untold-new-4.jpg",
+      "/images/untold-new-5.jpg"
+    ],
+    "body": [
+      "Volunteering at UNTOLD Emergency was hands down one of the most incredible weeks I've had. It wasn't just about the music; it was the behind-the-scenes hustle, the late nights, and sharing the chaos with friends.",
+      "Day 1 (Monday): The journey started on a quiet Monday evening. We gathered for our official training, stepping into the massive, empty venue before the madness. That’s when it hit me<->this was going to be huge. We received our iconic red volunteer t-shirts, met the crew, and the excitement started to bubble.",
+      "Day 2 (Tuesday): This was the calm before the storm. We spent most of the day handling paperwork, officially signing our contracts, and hanging around the volunteer camp. We took a long walk through the festival grounds, watching the stages being built. To be completely honest, it was kind of boring, ngl, but the anticipation kept us going.",
+      "Day 3 (Wednesday): Things started getting real! The staff called us to the Cluj Arena, where we stayed for about 4-5 hours to help set up. It was blazing hot outside, but we were just chilling, drinking ice-cold sodas, and having an absolute blast :)))) It honestly felt more like hanging out with friends than doing actual work. We just served drinks and soaked in the atmosphere.",
+      "Day 4 (Thursday): The festival officially opened its gates! I had a super chill morning shift, which gave me the perfect opportunity to just enjoy the artists and hang out with my friends later in the day. We walked around, explored the activations, and the energy of the crowd was infectious. I could tell you about the main stage, but honestly, this is my experience as an emergency volunteer, and to just tell the same story as regular participants wouldn't be nice :))",
+      "Day 5 (Friday): The perks of the job finally paid off! I spent the first part of the day at the volunteer camp, and then a friend and I got the rare chance to visit the backstage area! It was crazy seeing how everything operates behind the curtain. After checking out of my shift, I stayed for the festival and managed to see Swae Lee and Zara Larsson live. Singing along in the crowd was incredibly fun and definitely a highlight.",
+      "Day 6 (Saturday): The morning shift dragged on a bit, but it was a blessing in disguise because it meant I had the entire evening free to roam. The lineup wasn't my absolute favorite that night, but the vibe was still immaculate. Plus, staying for the special awards ceremony after volunteering made the whole effort feel super rewarding and appreciated.",
+      "Day 7 (Sunday): The grand finale, and easily the day with the most insane lineup! We were given the whole day off and we absolutely made the most of it. We saw Martin Garrix, Steve Aoki, and all the massive DJs tearing up the main stage. Just look up the artists online<->the energy was completely unreal :) When the final fireworks went off, I realized how exhausting the week had been. After the festival ended, I literally had zero energy left for two whole days... but it was so worth it. It was so cool :)))"
+    ]
+  },
+  {
+    "slug": "ceoai-volunteer",
+    "title": "My Volunteer Experience at CEOAI",
+    "date": "2026-07-19",
+    "category": "Portfolio, Volunteer",
+    "excerpt": "A quick overview of my fun and memorable five days volunteer experience at the CEOAI competition in Cluj-Napoca.",
+    "shortStory": "Volunteering at CEOAI was an incredibly wonderful experience. Although the days were long and demanding,staying on our feet from morning until late evening,working alongside a fantastic, youthful committee and my schoolmates made it totally worth it. From managing delegations to reporting technical glitches and celebrating at the final gala, every single day brought something completely different and deeply memorable.",
+    "cover": "/images/ceoai-banner.png",
+    "gallery": [
+      "/images/ceoai-banner.png",
+      "/images/ceoai-group.jpg"
+    ],
+    "body": [
+      "My volunteer experience at CEOAI was absolutely wonderful. The committee was incredibly friendly and easygoing, especially since they were young, which made it super easy to get along and have fun. Jokes aside, there were also some really tough days. We were on our feet from morning until late evening, but luckily, I had some of my classmates and school friends there with me. The best part was that every single day brought a completely different vibe and memorable events.",
+      "Day 1",
+      "The first day passed in a flash because the delegations were already arriving. I had the pleasure of coordinating the delegation from Moldova. Afterward, I headed to the practice round held at CREIC, where I helped coordinate alongside a good friend. The news crews even showed up in the halls while we were busy reporting platform issues to the team.",
+      "Day 2",
+      "I couldn't make it to the opening ceremony in the morning, but I joined the practice round shortly after. I mostly hung out with a classmate until the committee came over and gave us the hilarious task of turning a QWERTY keyboard into an AZERTY one :))))). Later, we went to the BMW office where they held a workshop, and that was pretty much it before dinner.",
+      "Day 3",
+      "Competition day! Initially, we hung out with the delegations in front of CREIC. We guided them upstairs before the contest started and made sure all their computers were turned on and ready to go. Afterward, a few colleagues and I stayed in a separate room where we played cards :)). We also acted as impromptu baristas, making coffee for anyone who needed it since we had an espresso machine right there. Sadly, I had to leave for about three hours in the middle of the competition, but I returned later with some friends to give the delegations a tour of Cluj, wrapping up the day with dinner.",
+      "Day 4",
+      "The second day of the competition was tough, and we stayed there the entire day. There were a lot of technical issues right at the start; I ran back and forth with another volunteer to centralize all the problems for the committee. In between, we played some cards, distributed food, made sure everything was running smoothly, and did some short shifts supervising the contest rooms. Afterward, we went to play board games with the delegations and volunteers (while another group went to the Cluj Botanical Garden), which was super interesting and fun.",
+      "Day 5",
+      "We took an amazing trip to the Turda Salt Mine (Salina Turda), where we explored and rode the boats on the underground lake with most of the delegations, volunteers, and the committee. Afterward, we had lunch at a really cool restaurant. Then came the awards ceremony, where every medal-winning student was recognized. We, the volunteers, also got to go up on stage for some photos! The CEO of BMW was there too. Finally, we had the closing gala, where we partied and had a blast with all the delegations until late at night."
+    ]
+  },
+  {
+    "slug": "rise",
+    "title": "Second Place at RISE Final Round :)",
+    "date": "2026-06-06",
+    "category": "Portofolio",
+    "excerpt": "Second place at the RISE Final Round",
+    "shortStory": "I placed 2nd at the RISE Final Round, an international-style AI competition hosted on Nitro-AI Judge, where I competed as vladandrei.",
+    "cover": "/images/riselogo.png",
+    "gallery": [
+      "/images/roaifinalround.png"
+    ],
+    "body": [
+      "RISE was one of my strongest competition results so far. After the online qualifier stage, the final round brought together some of the best competitors in a much more intense format, with harder tasks and a lot more pressure.",
+      "The final was hosted on Nitro-AI Judge, where I competed using the username vladandrei. The contest followed an AI olympiad-style format, focused on practical problem solving, machine learning intuition, and the ability to build reliable solutions under strict time constraints.",
+      "I managed to finish in 2nd place, which made this result especially meaningful for me. It was not just about getting a high score, but about proving that I could stay focused in a final round and compete against strong participants.",
+      "This competition helped me become more confident in my AI problem-solving skills. It also motivated me to continue preparing for harder AI competitions, especially ones with tasks inspired by international olympiad formats."
+    ]
+  },
+  {
+    "slug": "skillab",
+    "title": "Skillab<->Innovation Challenge",
+    "date": "2026-05-27",
+    "category": "Portofolio",
+    "excerpt": "First place at the Skillab Innovation Challenge",
+    "shortStory": "My team won 1st place at the Skillab Innovation Challenge and received a 1000 euro prize.",
+    "cover": "/images/skillab-logo-img.jpg",
+    "gallery": [
+      "/images/angelu.png"
+    ],
+    "body": [
+      "Skillab Innovation Challenge was a different kind of competition for me because it combined technology, research, teamwork, and product thinking. Instead of only solving a predefined programming task, we had to think about a real-world problem and build a strong idea around it.",
+      "The challenge was connected to skills, jobs, labour market analytics, and the way AI can help understand the gap between what people know and what companies need. This made the event feel very practical, because the topic was not just technical, but also connected to education and the future of work.",
+      "Together with my team, I won 1st place and received a 1000 euro prize. The result was really exciting because it showed that our idea was not only technically interesting, but also convincing from an innovation and impact perspective.",
+      "This competition helped me improve how I present ideas, how I work in a team, and how I connect AI with real problems. It also gave me more confidence in hackathons and innovation challenges where communication and creativity matter just as much as coding."
+    ]
+  },
+  {
+    "slug": "roaiprelot",
+    "title": "ROAI Prelot<->Volunteer & Problem Setter",
+    "date": "2026-05-18",
+    "category": "Portofolio",
+    "excerpt": "I volunteered and proposed a Reinforcement Learning problem named Funtime Beach, inspired by Gymnasium's Blackjack environment.",
+    "shortStory": "I designed Funtime Beach, a model-based Reinforcement Learning problem inspired by the Blackjack environment from Gymnasium.",
+    "cover": "/images/portfolio-duck.png",
+    "gallery": [
+      "/images/prelotproblemamea.png"
+    ],
+    "body": [
+      "For ROAI Prelot, I had the chance to contribute from a different perspective: not only as someone who solves problems, but also as a volunteer and problem setter. This helped me understand how much work goes into creating a good contest task.",
+      "My proposed problem was called Funtime Beach. It was a Reinforcement Learning task inspired by Gymnasium's Blackjack environment, but reinterpreted in a more original and playful setting. The goal was to keep the decision-making feeling of Blackjack while turning it into a model-based RL problem.",
+      "Designing the task was challenging because a good problem needs to be clear, fair, and interesting at the same time. I had to think about how participants would understand the environment, what strategies they could discover, and how the problem statement should guide them without giving away the solution.",
+      "This experience helped me improve a lot. It made me better at explaining technical ideas, thinking about edge cases, and understanding competitions from the organizer side. It also made me appreciate problem setters much more, because creating a task can be just as difficult as solving one."
+    ]
+  },
+  {
+    "slug": "nitronlp",
+    "title": "NitroNLP Hackathon",
+    "date": "2026-05-10",
+    "category": "Portofolio",
+    "excerpt": "3rd place at Nitro NLP Hackathon 5th Edition",
+    "shortStory": "My team PretrainedLanguageModel placed 3rd at the Nitro NLP Hackathon 5th Edition.",
+    "cover": "/images/portfolio-duck.png",
+    "gallery": [
+      "/images/pretrainedlm.png"
+    ],
+    "body": [
+      "NitroNLP Hackathon was one of the most fun AI competitions I joined because it focused on Natural Language Processing, a field that combines machine learning, language, data, and experimentation.",
+      "I participated with my team, PretrainedLanguageModel, and we competed on Nitro-AI Judge. My username on the platform was vladandrei. The hackathon format made everything more intense because we had to move fast, test ideas, and improve our solution under time pressure.",
+      "We placed 3rd, which was a great result for the team. During the competition, teamwork mattered a lot: we had to split responsibilities, compare approaches, and decide quickly which experiments were worth keeping.",
+      "This hackathon helped me understand NLP better in a practical way. It was not only about knowing models or libraries, but about building a full solution, evaluating it, improving it, and communicating efficiently with the team."
+    ]
+  },
+  {
+    "slug": "roaiselection",
+    "title": "ROAI Selection Camp Qualifier",
+    "date": "2026-04-16",
+    "category": "Portofolio",
+    "excerpt": "33rd place at the ROAI Selection Camp Qualifier",
+    "shortStory": "I placed 33rd at the ROAI Selection Camp Qualifier, the round used to select students for the ROAI camp.",
+    "cover": "/images/portfolio-duck.png",
+    "gallery": [
+      "/images/selectielot.png"
+    ],
+    "body": [
+      "The ROAI Selection Camp Qualifier was one of the most competitive AI rounds I participated in. It was connected to the selection process for the ROAI camp, so the level was naturally high and the pressure was much stronger than in a regular contest.",
+      "I finished in 33rd place. While I would have liked to place higher, this round was still very valuable because it showed me what high-level AI competition tasks look like and what I need to improve for the future.",
+      "The contest tested practical skills across machine learning, data processing, and problem-solving. I had to make decisions quickly, experiment with approaches, and manage my time carefully, because in AI competitions even small choices can affect the final score.",
+      "This experience pushed me to become more disciplined in how I approach difficult tasks. I learned that strong results come from a combination of preparation, good intuition, clean implementation, and the ability to recover when an idea does not work."
+    ]
+  },
+  {
+    "slug": "roainationala",
+    "title": "ROAI National Stage",
+    "date": "2026-04-07",
+    "category": "Portofolio",
+    "excerpt": "19th place at the ROAI National Stage",
+    "shortStory": "I placed 19th at the ROAI National Stage, one of the main stages of Romania's AI olympiad selection.",
+    "cover": "/images/portfolio-duck.png",
+    "gallery": [
+      "/images/nationalaroai.png"
+    ],
+    "body": [
+      "ROAI was one of the most important AI competitions I participated in. The National Stage was a serious step up from normal practice rounds, because it gathered qualified students and tested both theoretical understanding and practical AI skills.",
+      "I placed 19th in the national phase. For me, this was an important benchmark because it showed where I stood among other students interested in machine learning, data science, algorithms, and AI olympiad-style tasks.",
+      "The round required more than just writing code quickly. I had to understand the task, choose the right approach, test ideas carefully, and avoid wasting time on methods that were unlikely to improve the score.",
+      "Even though I still saw many things I could improve, this result gave me a lot of motivation. ROAI helped me understand that competitive AI is not only about knowing libraries, but also about strategy, experimentation, clean thinking, and staying calm during difficult tasks."
+    ]
+  },
+  {
+    "slug": "esc",
+    "title": "European Statistics Competition",
+    "date": "2026-03-21",
+    "category": "Portofolio",
+    "excerpt": "European Statistics Competition, the official Statistics Olympiad of Romania",
+    "shortStory": "My team society placed 164th in the European Statistics Competition.",
+    "cover": "/images/esc.png",
+    "gallery": [
+      "/images/escplace.png"
+    ],
+    "body": [
+      "The European Statistics Competition was a different experience from my usual AI and programming contests. It focused more on statistics, data interpretation, official data sources, and explaining conclusions clearly.",
+      "I participated with my team, society, and we placed 164th. Even though this was not a top placement, the competition was valuable because it helped me practice a different kind of thinking: less about code, more about understanding data and communicating insights.",
+      "The tasks required attention to detail and the ability to interpret information correctly. In statistics, it is not enough to get a number; you also need to explain what that number means and why it matters.",
+      "ESC helped me become more comfortable with data analysis, teamwork, and evidence-based reasoning. It also connected well with my interest in AI, because good AI work depends a lot on understanding data properly."
+    ]
+  },
+  {
+    "slug": "ccc",
+    "title": "CCC School & Data/AI :)",
+    "date": "2025-10-24",
+    "category": "Portofolio",
+    "excerpt": "Place School: 4th, Place Data/AI: 12th",
+    "shortStory": "I competed in CCC using the username vladddddddd and placed 4th in School and 12th in Data/AI.",
+    "cover": "/images/ccc.png",
+    "gallery": [
+      "/images/ccc2.png"
+    ],
+    "body": [
+      "Cloudflight Coding Contest was a very interesting competition because it mixed fast problem solving with a level-based format. Instead of solving completely separate tasks, the contest challenged participants to progress through increasingly difficult levels.",
+      "I competed using the username vladddddddd. I placed 4th in the School category and 12th in the Data/AI category, which made this one of my strongest multi-category competition results.",
+      "The School category tested classic programming and algorithmic thinking, while the Data/AI category required a different mindset: working with data, models, patterns, and practical experimentation.",
+      "What I liked most about CCC was the way it rewarded both speed and persistence. Each level became harder, so the challenge was not just to solve problems, but to keep improving the solution until it passed more difficult cases.",
+      "This result showed me that I can perform well across different types of technical competitions, from algorithms to AI and data-oriented tasks. It also motivated me to keep training in both competitive programming and applied machine learning."
+    ]
+  }
+]

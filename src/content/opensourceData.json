@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "socratex-library",
+    "name": "SocrateX",
+    "description": "Open-source library component of the Socrate project, providing advanced tools and utilities for seamless integration.",
+    "repoUrl": "https://github.com/ihatebaselines/socrate/tree/main/library/SocrateX",
+    "language": "Python",
+    "topics": ["library", "machine-learning", "open-source", "python"],
+    "image": "/images/socrate-logo.png"
+  },
+  {
+    "slug": "swift",
+    "name": "swift...",
+    "description": "\"Not smash, just swift.\" As Jonathan Swift noted: 'May you live all the days of your life.' A quiet prelude<->swift, nimble, and always keeping one step ahead of the rest. Stay swift.",
+    "repoUrl": "",
+    "language": "Python",
+    "topics": ["swift", "coming-soon"],
+    "image": "/images/heiheihei.gif"
+  }
+]

@@ -1,0 +1,193 @@
+[
+  {
+    "slug": "dpit-2026",
+    "title": "DpIT Academy 2026<->2nd Place",
+    "date": "2026-11-05",
+    "result": "2nd Place · Award II",
+    "tag": "Competition & Product Development",
+    "summary": "Won 2nd Place (Award II) at DpIT Academy 2026 with Team Thores, developed under BMW Techworks Romania mentorship. A 6-month product journey featuring business workshops, live jury demo on a mattress, and an exhibition booth.",
+    "image": "/images/dpit-team.jpg",
+    "gallery": [
+      "/images/dpit-team.jpg",
+      "/images/dpit-award.jpg"
+    ],
+    "relatedHref": "/blog/dpit-2026",
+    "links": [
+      {
+        "label": "Thores Official Website",
+        "url": "https://thores.ro/",
+        "description": "Official platform developed by Team Thores during DpIT 2026."
+      },
+      {
+        "label": "DpIT Official Site",
+        "url": "https://dpit.ro/",
+        "description": "Asociația Descoperă-ți Pasiunea în IT annual academy."
+      }
+    ],
+    "body": [
+      "Won 2nd Place (Award II) at DpIT Academy 2026 with Team Thores, competing against 21 high-school teams backed by top IT companies in Cluj-Napoca.",
+      "Over the course of six months, our team<->Ian Ștefan-Cazacu, Maria Borgovan, Natasha Oprean, Patric Baidoc, Andrei Pop, and Vlad Andrei Rus<->worked under the guidance of our BMW Techworks Romania mentors, Vlad Stoian, Cristian Matei, and Timea Fodor. We also had access to a wide variety of workshops offered by DpIT Academy (there were so many different types of sessions, though tbh I didn't manage to attend all of them (: but what we learned was huge).",
+      "We developed Thores (https://thores.ro/), demonstrated the product live in front of the judging panel (including a memorable live demo while on a mattress), and hosted a crowded interactive booth with custom merch and a prize wheel during the final gala."
+    ]
+  },
+  {
+    "slug": "ccc-2026",
+    "title": "CCC 2026<->School & Data/AI",
+    "date": "2026-10-24",
+    "result": "14th · School / 31st · Data/AI",
+    "tag": "AI Competition & Programming",
+    "summary": "Placed 14th in School and 31st in Data/AI with team PretrainedLanguageModel in an intense edition marked by matchmaking bottlenecks and the lack of fairness around top-tier paid AI subscriptions.",
+    "image": "/images/ccc.png",
+    "gallery": [
+      "/images/ccc2.png"
+    ],
+    "relatedHref": "/blog/ccc-2026",
+    "body": [
+      "CCC 2026 was a very interesting experience, even though this year we didn't manage to achieve our best results<->finishing 31st in Data/AI with team PretrainedLanguageModel and 14th in the School category.",
+      "In the Data/AI track, our progress was heavily impacted by what our team felt was a poorly designed matchmaking system. Because the queue rarely placed us into matches, we were unable to play nearly enough games with our AI<->ending up with around 100 matches while other teams had 300–400 matches, and at times waiting 10 minutes without getting into a single match, watching our rank drop from 2nd down to 10th, 20th, and 31st toward the end.",
+      "We're not denying that we vibecoded too, but it's honestly sad that there is no real fairness right now: top teams pay for the most expensive AI model subscriptions just to profit from taking the top spots, while others don't stand a chance<->even when trying hard to write good prompts, you still can't reach that performance ): A similar dynamic with paid AI subscriptions affected the School category as well, where we finished in 14th place."
+    ]
+  },
+  {
+    "slug": "rosdc-2026",
+    "title": "ROSDC 2026",
+    "date": "2026-10-17",
+    "result": "Operations · Condor",
+    "tag": "Space Design Competition",
+    "summary": "First of all, Condor is way better than Kepler or whatever other team 💔 Worked on the Operations department in the Romanian Space Design Competition, collaborating with creative students on a complex aerospace engineering proposal.",
+    "image": "/images/rosdc-logo.png",
+    "gallery": [
+      "/images/rosdc-logo.png",
+      "/images/rosdc-condor.png"
+    ],
+    "links": [
+      {
+        "label": "Instagram (@ro.sdc)",
+        "url": "https://www.instagram.com/ro.sdc/",
+        "description": "Official Instagram page of the Romanian Space Design Competition (ROSDC)."
+      }
+    ],
+    "body": [
+      "First things first: Condor is way better than Kepler or whatever other team 💔",
+      "ROSDC 2026 (Romanian Space Design Competition) was a wonderful experience! Held as an industry-style aerospace engineering and space settlement design simulation, the competition brings high school students together into fictional aerospace companies<->such as Condor<->to respond to a complex Request for Proposal (RFP) for future space habitats and orbital infrastructure.",
+      "I worked on the Operations side of the project, focusing on how the settlement and systems actually function, scale, and sustain daily life and logistics in space.",
+      "Beyond the engineering challenge itself, the best part of ROSDC 2026 was meeting so many creative people with truly awesome ideas and collaborating under pressure to turn ambitious concepts into a cohesive design pitch."
+    ]
+  },
+  {
+    "slug": "algorithms-to-neurons",
+    "title": "From Algorithms to Neurons",
+    "date": "2026-08-26",
+    "result": "1st · AI Competition / 9th · Hackathon",
+    "tag": "AI Competition & Hackathon",
+    "summary": "1st place in the AI Competition (Group A) and 9th place in the 24h Hackathon at Constanța Maritime University.",
+    "image": "/images/algorithms-to-neurons-logo.png",
+    "gallery": [
+      "/images/algorithms-to-neurons/event-photo-01.jpg",
+      "/images/algorithms-to-neurons/event-photo-02.jpg",
+      "/images/algorithms-to-neurons/event-photo-03.jpg",
+      "/images/algorithms-to-neurons/event-photo-04.jpg",
+      "/images/algorithms-to-neurons/event-photo-05.jpg",
+      "/images/algorithms-to-neurons/event-photo-06.jpg",
+      "/images/algorithms-to-neurons/event-photo-07.jpg",
+      "/images/algorithms-to-neurons/event-photo-08.jpg",
+      "/images/algorithms-to-neurons/event-photo-09.jpg",
+      "/images/algorithms-to-neurons/event-photo-10.jpg",
+      "/images/algorithms-to-neurons/event-photo-11.jpg",
+      "/images/algorithms-to-neurons/event-photo-12.jpg",
+      "/images/algorithms-to-neurons/event-photo-13.jpg"
+    ],
+    "relatedHref": "/blog/from-algorithms-to-neurons",
+    "body": [
+      "From Algorithms to Neurons was a five-day AI, STEM, signal processing and technology event in Constanța, organized with IEEE Romania Section and Informatică pentru Viitor.",
+      "I placed 1st in the AI Competition (Group A, Grades 7–10) with ~260/300 points focusing on Signal Analysis and audio processing, and achieved 9th place in the 24-hour hackathon with team Camera 505."
+    ]
+  },
+  {
+    "slug": "rise-final",
+    "title": "RISE Final Round",
+    "date": "2026-06-06",
+    "result": "2nd place",
+    "tag": "Competition",
+    "summary": "Second place at the RISE Final Round after a stronger final with harder AI tasks.",
+    "image": "/images/riselogo.png",
+    "gallery": [
+      "/images/roaifinalround.png"
+    ],
+    "relatedHref": "/blog/rise",
+    "body": [
+      "RISE was one of the competition results that gave me a lot of confidence. The final round was harder than the qualifier and forced me to stay calm while solving AI-style tasks under pressure.",
+      "This work entry is here because I want the Work section to track outcomes and the process behind them, not only the final placement."
+    ]
+  },
+  {
+    "slug": "skillab",
+    "title": "Skillab Innovation Challenge",
+    "date": "2026-05-27",
+    "result": "1st place",
+    "tag": "Hackathon",
+    "summary": "First place with a project around skills, labour-market analytics, and AI-assisted insight.",
+    "image": "/images/skillab-logo-img.jpg",
+    "gallery": [
+      "/images/angelu.png"
+    ],
+    "relatedHref": "/blog/skillab",
+    "repoUrl": "https://github.com/rusu28/Skillab-Radar-V1.2",
+    "body": [
+      "Skillab was the hackathon connected to Cluj IT Cluster where my team built Skillab Radar, a project around skills, labour-market analytics, and AI-assisted insight.",
+      "The challenge was more product-oriented than most contests I join. We had to connect AI, data, and a useful idea in a way that made sense outside a pure coding contest.",
+      "The repo is linked here because this is one of the projects where the implementation matters as much as the presentation."
+    ]
+  },
+  {
+    "slug": "nitronlp",
+    "title": "NitroNLP Hackathon",
+    "date": "2026-05-10",
+    "result": "3rd place",
+    "tag": "NLP",
+    "summary": "Third place with PretrainedLanguageModel in a fast NLP hackathon on Nitro-AI Judge.",
+    "image": "/images/pretrainedlm.png",
+    "gallery": [
+      "/images/pretrainedlm.png"
+    ],
+    "relatedHref": "/blog/nitronlp",
+    "body": [
+      "NitroNLP was a fast team-based NLP competition. It rewarded quick iteration, practical evaluation, and communication inside the team.",
+      "This belongs in Work because it was a concrete applied NLP build under contest constraints."
+    ]
+  },
+  {
+    "slug": "roai-selection",
+    "title": "ROAI Selection Camp Qualifier",
+    "date": "2026-04-16",
+    "result": "33rd place",
+    "tag": "AI Competition",
+    "summary": "A high-pressure qualifier round that pushed my practical ML and contest strategy.",
+    "image": "/images/portfolio-duck.png",
+    "gallery": [
+      "/images/selectielot.png"
+    ],
+    "relatedHref": "/blog/roaiselection",
+    "body": [
+      "The ROAI Selection Camp Qualifier was useful because it exposed weaknesses in how I manage experiments and time. It was not only about knowing ML, but also about choosing the right experiment quickly.",
+      "I keep this in Work because it shaped how I think about AI competitions: practical decisions matter as much as the model itself."
+    ]
+  },
+  {
+    "slug": "ccc",
+    "title": "CCC School & Data/AI",
+    "date": "2025-10-24",
+    "result": "4th · School / 12th · Data/AI",
+    "tag": "Programming",
+    "summary": "Placed 4th in School and 12th in Data/AI, mixing algorithmic speed with data thinking.",
+    "image": "/images/ccc.png",
+    "gallery": [
+      "/images/ccc2.png"
+    ],
+    "relatedHref": "/blog/ccc",
+    "body": [
+      "CCC mixed level-based programming with data and AI thinking. I liked it because the structure rewarded persistence: each improvement unlocked more of the task.",
+      "It is a good example of the kind of work I enjoy most: problem solving that sits somewhere between algorithms, data, and practical implementation."
+    ]
+  }
+]

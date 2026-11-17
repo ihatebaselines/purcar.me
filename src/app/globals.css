@@ -2676,3 +2676,58 @@ body.site-body {
 @media(max-width:600px) {
   .hero-minimal .home-title { font-size: clamp(3.9rem, 16vw, 6rem); letter-spacing: -.08em; }
 }
+
+/* Small-screen refinements for the current Purcar landing and HexoChem Studio. */
+@media (max-width: 760px) {
+  .purcar-home .hero-minimal {
+    min-height: calc(88svh - 70px);
+    padding: 42px 0 24px;
+  }
+  .purcar-home .hero-minimal-center { padding-inline: 2px; }
+  .purcar-home .home-title {
+    width: 100%;
+    margin: 0 0 14px;
+    white-space: normal;
+  }
+  .purcar-home .home-title .hero-video-text { display: block; width: 100%; height: auto; }
+  .purcar-home .hero-minimal-desc { max-width: 36ch; padding-inline: 12px; }
+  .purcar-home .purcar-hero-actions { width: 100%; gap: 12px; }
+  .purcar-home .purcar-primary-link { justify-content: center; min-height: 48px; }
+  .purcar-home .purcar-secondary-link { justify-content: center; text-align: center; }
+  .purcar-home .hero-minimal-bottom { padding-inline: 4px; }
+
+  .purcar-section { margin-block: 40px; padding: clamp(20px, 5vw, 30px); border-radius: 22px; }
+  .purcar-hover-card { min-width: 0; }
+  .purcar-hover-card h3, .purcar-hover-card p { overflow-wrap: anywhere; }
+  .purcar-hover-visual { width: 100%; min-width: 0; }
+
+  .hero-footer-cta-wrap { width: 100%; padding-inline: 14px; }
+  .hero-footer-main-grid, .hero-footer-link-groups { min-width: 0; }
+
+  .studio-page { width: 100%; min-width: 0; padding-inline: 14px; }
+  .studio-heading { align-items: flex-start; }
+  .studio-heading h1 { font-size: clamp(34px, 9vw, 48px); }
+  .studio-toolbar, .studio-workspace, .studio-panel { min-width: 0; }
+  .studio-toolbar > div { max-width: 100%; }
+  .studio-toolbar .studio-button { min-height: 40px; }
+  .studio-status { max-width: 100%; line-height: 1.5; overflow-wrap: anywhere; }
+  .studio-canvas-wrap { margin-inline: 8px; }
+  .studio-canvas { width: 100%; height: clamp(220px, 68vw, 280px) !important; }
+  .studio-product-panel .studio-canvas { height: clamp(240px, 74vw, 300px) !important; }
+  .studio-advanced-fields { min-width: 0; }
+  .studio-advanced-fields > * { min-width: 0; }
+}
+
+@media (max-width: 420px) {
+  .purcar-home .hero-minimal { padding-top: 34px; }
+  .purcar-home .home-title { font-size: clamp(2.6rem, 12.5vw, 3.3rem); letter-spacing: -.065em; }
+  .purcar-eyebrow { font-size: 8px; letter-spacing: .1em; }
+  .purcar-model-strip { gap: 8px 12px; }
+  .purcar-model-strip .strip-label { font-size: .7rem; }
+  .studio-page { padding-inline: 10px; }
+  .studio-toolbar { padding: 10px !important; }
+  .studio-panel-header { gap: 8px; }
+  .studio-panel-title { gap: 6px; font-size: 12px !important; }
+  .studio-stat { font-size: 8px !important; }
+  .studio-smiles-row { padding-inline: 10px !important; }
+}
