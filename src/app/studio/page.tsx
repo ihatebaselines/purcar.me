@@ -172,7 +172,10 @@ export default function StudioPage() {
         response = await fetch(MODEL_URL, { cache: "force-cache" });
         if (cache && response.ok) void cache.put(MODEL_URL, response.clone()).catch(() => undefined);
       }
-      if (!response.ok) throw new Error(`Model download failed (${response.status})`);
+      if (!response.ok) {
+        const detail = (await response.text()).trim();
+        throw new Error(detail || `Model download failed (${response.status})`);
+      }
 
       const total = Number(response.headers.get("content-length")) || 0;
       let modelBytes: Uint8Array | null = total ? new Uint8Array(total) : null;
