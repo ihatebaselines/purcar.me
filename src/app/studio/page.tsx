@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import type { InferenceSession } from "onnxruntime-web";
+import { parseSmilesToGraph } from "@/lib/smiles";
 import { ImageGenerationLoader } from "@/components/magic/ui";
 import { PeriodicTableModal } from "@/components/PeriodicTableModal";
 
@@ -245,11 +246,18 @@ export default function StudioPage() {
     if (!smi.trim()) { graphsRef.current[k].nodes = []; graphsRef.current[k].edges = []; syncTextFromGraph(k); return; }
     try {
       const res = await fetch("/api/smiles_to_graph", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ smiles: smi.trim() }) });
+      if (!res.ok) throw new Error("Backend unavailable");
       const d = await res.json();
       if (d.error) { setStatus(d.error); return; }
       setGraphData(k, d);
     } catch {
-      setStatus("SMILES conversion needs the chemistry service; you can still edit atoms and bonds directly.");
+      try {
+        const parsed = parseSmilesToGraph(smi.trim());
+        setGraphData(k, parsed);
+        setStatus(`Loaded ${parsed.nodes.length} atoms · ${parsed.edges.length} bonds (in-browser SMILES parser).`);
+      } catch (err) {
+        setStatus(err instanceof Error ? err.message : "Could not parse SMILES.");
+      }
     }
   }
 
