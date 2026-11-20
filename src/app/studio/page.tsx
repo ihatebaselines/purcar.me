@@ -538,7 +538,7 @@ export default function StudioPage() {
   return (
     <main className="studio-page max-w-[1560px] mx-auto px-5 py-5 pb-28">
       <div className="studio-heading">
-        <div><span className="studio-kicker">PURCAR HEXOCHEM · PHC / 001</span><h1>HexoChemStudio1.1</h1><p>Build a reaction, then explore what the model predicts.</p></div>
+        <div><span className="studio-kicker">PURCAR HEXOCHEM · PHC / 001</span><h1>HexoChem v1.2</h1><p>Build a reaction, then explore what the model predicts.</p></div>
         <div className="studio-heading-mark" aria-hidden="true"><span>PHC</span><i>✳</i></div>
       </div>
       <div className="studio-toolbar flex flex-wrap items-center justify-between gap-3 p-3.5 mb-3 rounded-xl border border-white/10 bg-[#101215]">
