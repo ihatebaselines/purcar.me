@@ -1,10 +1,29 @@
 "use client";
 
+import { useEffect } from "react";
 import { CloudShader } from "@/components/magic/effects";
 import { ScrollProgress } from "@/components/magic/effects";
 import { motion, useMotionTemplate, useReducedMotion, useScroll, useTransform } from "motion/react";
 
+const MODEL_URL = "https://media.githubusercontent.com/media/ihatebaselines/purcar.me/refs/heads/main/models/phc-1.onnx?v=phc-1-onnx-3";
+const MODEL_CACHE = "purcar-phc-1-model-v2";
+
 export function Providers({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    if (typeof window === "undefined" || !("caches" in window)) return;
+    const timer = window.setTimeout(async () => {
+      try {
+        const cache = await caches.open(MODEL_CACHE);
+        const existing = await cache.match(MODEL_URL);
+        if (existing) return;
+        const res = await fetch(MODEL_URL, { cache: "force-cache" });
+        if (res.ok) await cache.put(MODEL_URL, res);
+      } catch {
+        // Silent background preload; ignore network errors
+      }
+    }, 2000);
+    return () => window.clearTimeout(timer);
+  }, []);
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
   const blueStrength = useTransform(scrollYProgress, [0, 0.2, 0.48, 0.76, 1], [0.015, 0.07, 0.18, 0.34, 0.5]);
