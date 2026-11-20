@@ -160,6 +160,7 @@ export default function StudioPage() {
     const loadPromise = (async () => {
       const ort = await import("onnxruntime-web/wasm");
       ort.env.wasm.wasmPaths = "/onnxruntime/";
+      ort.env.wasm.proxy = true;
 
       setStatus("Fetching PHC-1 model…");
       let cache: Cache | null = null;
@@ -227,7 +228,7 @@ export default function StudioPage() {
       setStatus("Starting ONNX Runtime WebAssembly…");
       const session = await ort.InferenceSession.create(modelBytes, {
         executionProviders: ["wasm"],
-        graphOptimizationLevel: "all",
+        graphOptimizationLevel: "basic",
       });
       sessionRef.current = session;
       setStatus("PHC-1 ready · running privately in this browser.");
