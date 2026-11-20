@@ -160,6 +160,7 @@ export default function StudioPage() {
     const loadPromise = (async () => {
       const ort = await import("onnxruntime-web/wasm");
       ort.env.wasm.wasmPaths = "/onnxruntime/";
+      ort.env.wasm.proxy = true;
 
       setStatus("Fetching PHC-1 model…");
       let cache: Cache | null = null;
@@ -227,7 +228,7 @@ export default function StudioPage() {
       setStatus("Starting ONNX Runtime WebAssembly…");
       const session = await ort.InferenceSession.create(modelBytes, {
         executionProviders: ["wasm"],
-        graphOptimizationLevel: "all",
+        graphOptimizationLevel: "basic",
       });
       sessionRef.current = session;
       setStatus("PHC-1 ready · running privately in this browser.");
@@ -539,7 +540,7 @@ export default function StudioPage() {
   return (
     <main className="studio-page max-w-[1560px] mx-auto px-5 py-5 pb-28">
       <div className="studio-heading">
-        <div><span className="studio-kicker">PURCAR HEXOCHEM · PHC / 001</span><h1>HexoChemStudio1.1</h1><p>Build a reaction, then explore what the model predicts.</p></div>
+        <div><span className="studio-kicker">PURCAR HEXOCHEM · PHC / 001</span><h1>HexoChemStudio1.2</h1><p>Build a reaction, then explore what the model predicts.</p></div>
         <div className="studio-heading-mark" aria-hidden="true"><span>PHC</span><i>✳</i></div>
       </div>
       <div className="studio-toolbar flex flex-wrap items-center justify-between gap-3 p-3.5 mb-3 rounded-xl border border-white/10 bg-[#101215]">
